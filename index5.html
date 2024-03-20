@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You MK</title>
+</head>
+<style>
+  body{
+      background-color: cadetblue;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+  }
+  .main{
+      text-align: center;
+  }
+  .teddy{
+      margin-bottom: 1em;
+  }
+  button{
+      margin: 0 0.5em;
+      height: 3em;
+      width: 7em;
+      background-color: rgb(163, 42, 165);
+      color: aliceblue;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      border: none;
+      cursor: pointer;
+  }
+  @media only screen and (max-width: 600px) {
+      .main{
+          margin: 0 1em;
+      }
+      button{
+          width: 100%;
+          margin: 0.5em 0;
+      }
+  }
+</style>
+<body>
+  <div class="main">
+    <div class="teddy">
+       <video src="img/5.mp4" muted loop id="autoplay"></video>
+        <h2>🥰😍I knew it. <br>Love You Alot!!! </h2>
+    </div>
+  </div>
+  <script>
+    window.onload = function()
+{
+    document.getElementById("autoplay").play();
+}
+  </script>
+</body>
+</html>

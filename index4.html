@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You MK</title>
+    <style>
+        body{
+            background-color: cadetblue;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .main{
+            text-align: center;
+        }
+        .teddy{
+            margin-bottom: 1em;
+        }
+        button{
+            margin: 0 0.5em;
+            height: 3em;
+            width: 7em;
+            background-color: rgb(163, 42, 165);
+            color: aliceblue;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: absolute;
+        }
+        .yes{
+            margin-left: -15em;
+        }
+        @media only screen and (max-width: 600px) {
+            .main{
+                margin: 0 1em;
+            }
+            .yes {
+                margin-left: 0;
+            }
+            button{
+                width: 100%;
+                margin: 0.5em 0;
+                position: static;
+            }
+            .teddy video {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="teddy">
+            <video src="img/3.mp4" muted loop id="autoplay"></video>
+            <h2>Maan jao na Please,
+                <br> Kitna Bhao Khaogi!!!</h2>
+        </div>
+        <div class="yes">
+            <button><a href="index5.html" style="text-decoration: none; color: aliceblue;">Yes</a></button>
+        </div>
+        <button id="noButton">No</button>
+    </div>
+
+    <script>
+        window.onload = function()
+{
+    document.getElementById("autoplay").play();
+}
+        const noButton = document.getElementById('noButton');
+
+        // Function to move the "No" button randomly
+        function moveNoButton() {
+            const randomX = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const randomY = Math.random() * (window.innerHeight - noButton.offsetHeight);
+
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+        }
+
+        // Call the moveNoButton function when the "No" button is hovered over
+        noButton.addEventListener('mouseenter', moveNoButton);
+    </script>
+</body>
+</html>
